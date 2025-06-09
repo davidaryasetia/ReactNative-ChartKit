@@ -2,6 +2,37 @@ import { ChartData } from 'react-native-chart-kit/dist/HelperTypes';
 import { LineChartData } from 'react-native-chart-kit/dist/line-chart/LineChart';
 import { StackedBarChartData } from 'react-native-chart-kit/dist/StackedBarChart';
 
+// Data For linearChartData
+export const lineChartData: LineChartData = { 
+    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6'], 
+    datasets: [
+        {
+            data:[28, 45, 60, 70, 60, 30],
+            color:() => 'green', 
+
+        }, 
+        {
+            data:[50 , 45, 50, 100, 60, 50],
+            color:() => 'red', 
+
+        }
+    ], 
+    legend:['January', 'February'],
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Data For barChartData
 export const barChartData: ChartData = { 
     labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', ' Day6'], 
@@ -20,23 +51,7 @@ export const barChartData: ChartData = {
 }
 
 
-// Data For linearChartData
-export const lineChartData: LineChartData = { 
-    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6'], 
-    datasets: [
-        {
-            data:[28, 45, 60, 70, 60, 30],
-            color:() => 'green', 
 
-        }, 
-        {
-            data:[50 , 45, 50, 100, 60, 50],
-            color:() => 'red', 
-
-        }
-    ], 
-    legend:['January', 'February'],
-}
 
 // Data For StackedBarChart Data
 export const stackedBarChartData: StackedBarChartData = {

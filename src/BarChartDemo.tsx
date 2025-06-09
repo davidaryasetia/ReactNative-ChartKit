@@ -3,9 +3,9 @@ import { BarChart } from "react-native-chart-kit";
 import { barChartData } from "./data";
 
 const BarChartDemo = () => {
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.ContainerText}>
         <Text style={styles.TextStyles}>Stock-Market Bar Charts</Text>
       </View>
@@ -14,20 +14,20 @@ const BarChartDemo = () => {
         yAxisLabel=""
         yAxisSuffix=""
         width={width}
-        height={400}
+        height={600}
         chartConfig={{
           backgroundGradientFrom: "yellow",
-          backgroundGradientToOpacity: 0.5,
+          backgroundGradientToOpacity: 1,
           backgroundGradientTo: "lightgreen",
           color: () => "black",
-          barPercentage: 0.6,
+          barPercentage: 1.2,
         }}
-        style={{ borderColor: "black", borderWidth: 0.2 }}
+        style={{ borderColor: "black", borderWidth: 0.5 }}
         withInnerLines={false}
-        // verticalLabelRotation={50}
-        // horizontalLabelRotation={10}
+        // verticalLabelRotation={40}
+        horizontalLabelRotation={10}
         showValuesOnTopOfBars
-        // showBarTops={false}
+        showBarTops={false}
         withCustomBarColorFromData
         flatColor
       />
@@ -36,9 +36,13 @@ const BarChartDemo = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+    marginBottom: 20,
+  },
   ContainerText: {
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 10,
   },
   TextStyles: {

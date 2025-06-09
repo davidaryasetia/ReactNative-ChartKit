@@ -5,7 +5,7 @@ import { lineChartData } from "./data";
 const LineChartDemo = () => {
   const { width } = useWindowDimensions();
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.containerText}>
         <Text style={styles.Text}>Stock-Market Line Charts</Text>
       </View>
@@ -14,7 +14,7 @@ const LineChartDemo = () => {
         yAxisLabel=""
         yAxisSuffix=""
         width={width}
-        height={400}
+        height={600}
         chartConfig={{
           backgroundGradientFrom: "yellow",
           backgroundGradientToOpacity: 0.5,
@@ -40,6 +40,10 @@ const LineChartDemo = () => {
 };
 
 const styles = StyleSheet.create({
+container: {
+    marginTop: 20, 
+    marginBottom: 40,
+},
   containerText: {
     alignItems: "center",
     marginTop: 20,

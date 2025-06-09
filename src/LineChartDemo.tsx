@@ -1,16 +1,16 @@
-import { StyleSheet, Text, useWindowDimensions, View } from "react-native";
-import { BarChart } from "react-native-chart-kit";
-import { barChartData } from "./data";
+import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { LineChart } from "react-native-chart-kit";
+import { lineChartData } from "./data";
 
-const BarChartDemo = () => {
+const LineChartDemo = () => {
   const { width } = useWindowDimensions();
   return (
     <View>
-      <View style={styles.ContainerText}>
-        <Text style={styles.TextStyles}>Stock-Market Bar Charts</Text>
+      <View style={styles.containerText}>
+        <Text style={styles.Text}>Stock-Market Line Charts</Text>
       </View>
-      <BarChart
-        data={barChartData}
+      <LineChart
+        data={lineChartData}
         yAxisLabel=""
         yAxisSuffix=""
         width={width}
@@ -19,32 +19,36 @@ const BarChartDemo = () => {
           backgroundGradientFrom: "yellow",
           backgroundGradientToOpacity: 0.5,
           backgroundGradientTo: "lightgreen",
-          color: () => "black",
+          color: () => "red",
           barPercentage: 0.6,
+          propsForDots:{
+            r:'3', 
+            strokeWidth:'2', 
+            stroke:'black'
+          }
         }}
         style={{ borderColor: "black", borderWidth: 0.2 }}
         withInnerLines={false}
+        withShadow={false}
+        getDotColor={() => 'yellow'}
+        hidePointsAtIndex={[3]} 
         // verticalLabelRotation={50}
         // horizontalLabelRotation={10}
-        showValuesOnTopOfBars
-        // showBarTops={false}
-        withCustomBarColorFromData
-        flatColor
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  ContainerText: {
+  containerText: {
     alignItems: "center",
     marginTop: 20,
-    marginBottom: 10,
+    marginBottom: 10, 
   },
-  TextStyles: {
+  Text: {
     fontSize: 16,
     fontWeight: "600",
   },
 });
 
-export default BarChartDemo;
+export default LineChartDemo;

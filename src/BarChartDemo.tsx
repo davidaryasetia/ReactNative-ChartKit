@@ -5,9 +5,9 @@ import { barChartData } from "./data";
 const BarChartDemo = () => {
   const { width } = useWindowDimensions();
   return (
-    <View style={styles.Container}>
+    <View>
       <View style={styles.ContainerText}>
-        <Text style={styles.TextStyles}>Bar Chart Testing</Text>
+        <Text style={styles.TextStyles}>Bar Chart react-native-charts</Text>
       </View>
       <BarChart
         data={barChartData}
@@ -36,11 +36,7 @@ const BarChartDemo = () => {
 };
 
 const styles = StyleSheet.create({
-  Container: {
-    flex: 1, 
-  }, 
   ContainerText: {
-    flex:1, 
     alignItems: "center",
     marginTop: 20, 
     marginBottom: 25, 
